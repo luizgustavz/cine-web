@@ -23,4 +23,11 @@ public class StreamingResourceImpl implements IStreamingResource {
                 .status(HttpStatus.CREATED)
                 .build();
     }
+
+    @Override
+    public ResponseEntity<Streaming> findById(Long id) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(usecase.findById(id));
+    }
 }

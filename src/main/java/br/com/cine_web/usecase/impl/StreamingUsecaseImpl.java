@@ -18,4 +18,9 @@ public class StreamingUsecaseImpl implements IStreamingUsecase {
     public Streaming register(Streaming streaming) {
         return repository.save(streaming);
     }
+
+    @Override
+    public Streaming findById(Long id) {
+        return repository.findById(id).orElse(null);
+    }
 }
