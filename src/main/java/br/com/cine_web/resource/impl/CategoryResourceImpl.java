@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class CategoryResourceImpl implements ICategoryResource {
 
@@ -29,5 +31,12 @@ public class CategoryResourceImpl implements ICategoryResource {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(usecase.findById(id));
+    }
+
+    @Override
+    public ResponseEntity<List<Category>> findAll() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(usecase.findAll());
     }
 }

@@ -5,6 +5,8 @@ import br.com.cine_web.domain.repository.ICategoryRepository;
 import br.com.cine_web.usecase.ICategoryUsecase;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CategoryUsecaseImpl implements ICategoryUsecase {
 
@@ -22,5 +24,10 @@ public class CategoryUsecaseImpl implements ICategoryUsecase {
     @Override
     public Category findById(Long id) {
         return repository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Category> findAll() {
+        return repository.findAll();
     }
 }
