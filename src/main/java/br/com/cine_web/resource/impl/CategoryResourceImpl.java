@@ -23,4 +23,11 @@ public class CategoryResourceImpl implements ICategoryResource {
                 .status(HttpStatus.CREATED)
                 .build();
     }
+
+    @Override
+    public ResponseEntity<Category> findById(Long id) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(usecase.findById(id));
+    }
 }

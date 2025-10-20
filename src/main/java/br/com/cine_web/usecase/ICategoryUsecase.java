@@ -5,4 +5,6 @@ import br.com.cine_web.domain.Category;
 public interface ICategoryUsecase {
 
     Category register(Category category);
+
+    Category findById(Long id);
 }

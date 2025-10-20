@@ -18,4 +18,9 @@ public class CategoryUsecaseImpl implements ICategoryUsecase {
     public Category register(Category category) {
         return repository.save(category);
     }
+
+    @Override
+    public Category findById(Long id) {
+        return repository.findById(id).orElse(null);
+    }
 }
