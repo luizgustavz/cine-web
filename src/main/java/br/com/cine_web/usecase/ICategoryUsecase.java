@@ -11,4 +11,6 @@ public interface ICategoryUsecase {
     Category findById(Long id);
 
     List<Category> findAll();
+
+    void dropById(Long id);
 }

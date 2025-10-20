@@ -30,4 +30,9 @@ public class CategoryUsecaseImpl implements ICategoryUsecase {
     public List<Category> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public void dropById(Long id) {
+        repository.deleteById(id);
+    }
 }

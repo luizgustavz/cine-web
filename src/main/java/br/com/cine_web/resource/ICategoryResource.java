@@ -18,4 +18,8 @@ public interface ICategoryResource {
     @GetMapping
     ResponseEntity<List<Category>> findAll();
 
+    @DeleteMapping("/{id}")
+    ResponseEntity<Void> dropById(@PathVariable Long id);
+
+
 }
