@@ -11,4 +11,6 @@ public interface IStreamingUsecase {
     Streaming findById(Long id);
 
     List<Streaming> findAll();
+
+    void dropById(Long id);
 }

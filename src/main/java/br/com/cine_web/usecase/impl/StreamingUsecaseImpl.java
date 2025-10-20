@@ -30,4 +30,9 @@ public class StreamingUsecaseImpl implements IStreamingUsecase {
     public List<Streaming> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public void dropById(Long id) {
+        repository.deleteById(id);
+    }
 }

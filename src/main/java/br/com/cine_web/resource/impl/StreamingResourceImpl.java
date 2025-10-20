@@ -39,4 +39,12 @@ public class StreamingResourceImpl implements IStreamingResource {
                 .status(HttpStatus.OK)
                 .body(usecase.findAll());
     }
+
+    @Override
+    public ResponseEntity<Void> dropById(Long id) {
+        usecase.dropById(id);
+        return ResponseEntity
+                .status(HttpStatus.NO_CONTENT)
+                .build();
+    }
 }

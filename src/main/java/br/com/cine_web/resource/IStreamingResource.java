@@ -18,4 +18,7 @@ public interface IStreamingResource {
     @GetMapping
     ResponseEntity<List<Streaming>> findAll();
 
+    @DeleteMapping("/{id}")
+    ResponseEntity<Void> dropById(@PathVariable Long id);
+
 }
