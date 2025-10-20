@@ -4,6 +4,8 @@ import br.com.cine_web.domain.Streaming;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequestMapping("/api/streaming")
 public interface IStreamingResource {
 
@@ -12,4 +14,8 @@ public interface IStreamingResource {
 
     @GetMapping("/{id}")
     ResponseEntity<Streaming> findById(@PathVariable Long id);
+
+    @GetMapping
+    ResponseEntity<List<Streaming>> findAll();
+
 }

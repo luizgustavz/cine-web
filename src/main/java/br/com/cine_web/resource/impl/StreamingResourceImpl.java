@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class StreamingResourceImpl implements IStreamingResource {
 
@@ -29,5 +31,12 @@ public class StreamingResourceImpl implements IStreamingResource {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(usecase.findById(id));
+    }
+
+    @Override
+    public ResponseEntity<List<Streaming>> findAll() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(usecase.findAll());
     }
 }

@@ -5,6 +5,8 @@ import br.com.cine_web.domain.repository.IStreamingRepository;
 import br.com.cine_web.usecase.IStreamingUsecase;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StreamingUsecaseImpl implements IStreamingUsecase {
 
@@ -22,5 +24,10 @@ public class StreamingUsecaseImpl implements IStreamingUsecase {
     @Override
     public Streaming findById(Long id) {
         return repository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Streaming> findAll() {
+        return repository.findAll();
     }
 }
