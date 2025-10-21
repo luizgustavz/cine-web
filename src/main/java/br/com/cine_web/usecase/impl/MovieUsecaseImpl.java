@@ -5,6 +5,8 @@ import br.com.cine_web.domain.repository.IMovieRepository;
 import br.com.cine_web.usecase.IMovieUsecase;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MovieUsecaseImpl implements IMovieUsecase {
 
@@ -18,5 +20,10 @@ public class MovieUsecaseImpl implements IMovieUsecase {
     @Override
     public Movie register(Movie movie) {
         return repository.save(movie);
+    }
+
+    @Override
+    public List<Movie> findAll() {
+        return repository.findAll();
     }
 }
