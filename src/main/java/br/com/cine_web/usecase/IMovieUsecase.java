@@ -11,4 +11,6 @@ public interface IMovieUsecase {
     List<Movie> findAll();
 
     Movie findById(Long id);
+
+    void dropById(Long id);
 }

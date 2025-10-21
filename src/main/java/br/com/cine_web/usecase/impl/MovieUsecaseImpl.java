@@ -31,4 +31,9 @@ public class MovieUsecaseImpl implements IMovieUsecase {
     public Movie findById(Long id) {
         return repository.findById(id).orElse(null);
     }
+
+    @Override
+    public void dropById(Long id) {
+        repository.deleteById(id);
+    }
 }

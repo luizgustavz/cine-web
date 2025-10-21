@@ -17,4 +17,7 @@ public interface IMovieResource {
 
     @GetMapping("/{id}")
     ResponseEntity<Movie> findById(@PathVariable Long id);
+
+    @DeleteMapping("{id}")
+    ResponseEntity<Void> dropById(@PathVariable Long id);
 }

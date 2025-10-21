@@ -39,4 +39,12 @@ public class MovieResourceImpl implements IMovieResource {
                 .status(HttpStatus.OK)
                 .body(usecase.findById(id));
     }
+
+    @Override
+    public ResponseEntity<Void> dropById(Long id) {
+        usecase.dropById(id);
+        return ResponseEntity
+                .status(HttpStatus.NO_CONTENT)
+                .build();
+    }
 }
