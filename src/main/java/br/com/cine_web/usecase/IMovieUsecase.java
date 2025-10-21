@@ -9,4 +9,6 @@ public interface IMovieUsecase {
     Movie register(Movie movie);
 
     List<Movie> findAll();
+
+    Movie findById(Long id);
 }

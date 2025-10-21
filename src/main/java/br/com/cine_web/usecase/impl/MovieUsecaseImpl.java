@@ -26,4 +26,9 @@ public class MovieUsecaseImpl implements IMovieUsecase {
     public List<Movie> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public Movie findById(Long id) {
+        return repository.findById(id).orElse(null);
+    }
 }
